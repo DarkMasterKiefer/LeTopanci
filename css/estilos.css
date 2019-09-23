@@ -1,0 +1,540 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Indie Flower', cursive;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.padre {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.margen-interno {
+    padding: 0 50px;
+}
+
+/*           -----------------------NAVEGADOR--------------------           */
+.header {
+    background: url(../imagenes/Logo.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.menu {
+    background: rgb(0, 0, 0, .1);
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    /* border-bottom: 1px solid rgb(225,225,225,.5)  */
+}
+
+.logo {
+    /* background: url(../imagenes/LogoCorp.jpg); */
+    flex: 1 1 auto;
+    margin-top: 45px;
+    padding: 10px;
+    text-align: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px rgb(31, 31, 5);
+}
+
+.logo a {
+    color: #fff;
+}
+
+.logo a:hover {
+    color: #ffe837;
+}
+
+.nav {
+    flex: 5 1 auto;
+    margin-top: 45px;
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px rgb(31, 31, 5);
+}
+
+.nav a {
+    color: whitesmoke;
+    font-size: 22px;
+    text-transform: uppercase;
+    padding: 0 20px;
+    letter-spacing: 2px;
+}
+
+.nav a:hover {
+    color: #ffe837;
+}
+
+.social {
+    flex: 1 1 auto;
+    display: flex;
+    margin-top: 45px;
+    padding: 10px;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px rgb(31, 31, 5);
+}
+
+.social a {
+    font-size: 20px;
+    color: grey;
+    padding: 0 5px;
+}
+
+.social a:hover {
+    color: #ffe837;
+}
+
+.texto-principal {
+    /* background: #05a19c; */
+    height: 700px;
+    display: flex;
+    align-items: center;
+
+}
+
+#text {
+    font-family: "lora", serif;
+    font-size: 21px;
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.6;
+}
+
+
+/*           -----------------------MUESTRA DE PRODUCTOS--------------------           */
+.section {
+    /* background-image: url(../imagenes/FondoPantalla.jpg); */
+    display: flex;
+}
+
+.panes1 {
+    background: #000;
+    flex: 2 1 auto;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.article {
+    flex: 1 1 40%;
+    color: #444;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 10px 10px 0 0px;
+    flex: 1 1 45%;
+    background: #ececec;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #888;
+    box-sizing: border-box;
+}
+
+.article img {
+    width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.navegacion {
+    background: #000;
+    flex: 1 1 100%;
+    margin: 10px 10px 0 0px;
+}
+
+.navegacion a {
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 0 10px;
+    letter-spacing: 2px;
+}
+
+.aside {
+    flex: 1 1 auto;
+    margin: 10px 5px 10px 0;
+}
+
+.aside img {
+    width: 100%;
+}
+
+h4 {
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+/*           -----------------------NOSOTROS--------------------           */
+.nose {
+    /* background: #888; */
+    color: rgb(235, 230, 230);
+    padding: 12px;
+    margin: 0px;
+    justify-content: center;
+    font-size: 20px;
+    padding-top: 15%;
+    padding-bottom:20%;
+}
+
+.nose p{
+    padding-top: 110px;
+}
+
+
+/*           -----------------------PRODUCTOS--------------------           */
+section{
+    background-image: url(../imagenes/FondoPantalla.jpg);
+}
+.produc1 {
+    /* background: url(../imagenes/Logo.jpg); */
+    display: flex;
+}
+
+.panes {
+    background: rgba(228, 228, 228);
+    color: #333;
+    border: 1px solid #333;
+    margin: 5% auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #888;
+    width: 23%;
+    box-sizing: border-box;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.precio {
+    font-size: 50px;
+    color: rgb(20, 209, 178);
+}
+
+.btn-precio {
+    background: sandybrown;
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 5px #888;
+}
+
+.btn-precio:hover {
+    background: #c8db16;
+}
+
+/*           -----------------------CONTACTO--------------------           */
+
+
+/*           -----------------------CARRUSEL--------------------           */
+.swiper-container {
+    width: 50%;
+    padding-top: 7%;
+    padding-bottom:20%;
+  }
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    display: flex;
+  }
+
+.a{
+    width: 450px;
+    height: 300px;
+} 
+
+#nose{
+    color: rgb(235, 230, 230);
+    font-size: 20px;
+    padding: 10px;
+    margin: 20px;
+    width: 100%;
+    position: relative;
+}
+.swiper-pagination{
+    /* background: #888; */
+    padding: 20px;
+}
+
+/*           -----------------------FOOTER--------------------           */
+.footer {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    /* margin-top: 10px; */
+    padding: 0px;  
+}
+
+.pie {
+    text-align: center;
+}
+
+.pie a {
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 0 10px;
+    letter-spacing: 2px;
+}
+
+/*           -----------------------BARRA DE REDES SOCIALES Y FECHA--------------------           */
+.iconosocial {
+    position: fixed;
+    /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+    right: 0;
+    /* Establecemos la barra en la izquierda */
+    top: 200px;
+    /* Bajamos la barra 200px de arriba a abajo */
+    z-index: 2000;
+    /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+}
+
+.iconosocial ul {
+    list-style: none;
+}
+
+.iconosocial ul li a {
+    display: inline-block;
+    color: #fff;
+    background: rgb(214, 88, 3);
+    padding: 5px 5px;
+    text-decoration: none;
+    -webkit-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+    /* Establecemos una transición a todas las propiedades */
+    box-shadow: 3px 5px 3px rgb(94, 10, 62);
+    box-sizing: border-box;
+}
+
+.iconosocial ul li a:hover {
+    margin: 3px;
+    background: rgb(192, 125, 0);
+    /* Cambiamos el fondo cuando el usuario pase el mouse */
+    padding: 6px 6px;
+    /* Hacemos mas grande el espacio cuando el usuario pase el mouse */
+}
+
+.flecharriba {
+    position: fixed;
+    right: 0;
+    top: 80%;
+    z-index: 2000;
+    list-style: none;
+    display: none;
+    color: rgb(0, 0, 0);
+    background: rgb(214, 88, 3);
+    padding: 5px 5px;
+    text-decoration: none;
+}
+
+.flecharriba :hover {
+    background: rgb(217, 255, 2);
+    padding: 6px 6px;
+}
+/*           -----------------------CONDICIONES--------------------           */
+@media all and (max-width: 1120px) {
+    .section {
+        flex-direction: column;
+    }
+
+    .menu {
+        text-align: center;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .social {
+        justify-content: center;
+    }
+
+    .aside {
+        display: flex;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 15px;
+    }
+
+    .texto-principal {
+        height: 450px;
+    }
+
+    .panes1 {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .article {
+        width: 120%;
+    }
+
+    .publicidad {
+        width: 20%;
+    }
+
+    #text {
+        color: #ffffff;
+        font-size: 20px;
+        padding: 10px 0;
+        margin-top: -120px;
+    }
+
+    .nose {
+        /* background: #888; */
+        color: rgb(235, 230, 230);
+        padding: 12px;
+        margin: 0px;
+        justify-content: center;
+        font-size: 20px;
+        padding-top: 13%;
+        padding-bottom:25%;
+    }
+
+    .nose p{
+        padding-top: 110px;
+    }
+
+    .swiper-container {
+        width: 50%;
+        padding-top: 7%;
+        padding-bottom:20%;
+    }
+
+}
+
+@media (max-width:1070px) {
+    .panes {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+
+    .section {
+        flex-direction: column;
+    }
+
+    .menu {
+        text-align: center;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .social {
+        justify-content: center;
+    }
+
+    .publicidad {
+        width: 20%;
+    }
+
+    #text {
+        color: #ffffff;
+        font-size: 20px;
+        padding: 10px 0;
+        margin-top: -120px;
+    }
+   
+}
+
+@media all and (max-width: 765px) {
+    .menu {
+        text-align: center;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .panes {
+        flex-direction: column;
+        width: 75%;
+        margin-bottom: 30px;
+    }
+
+    .panes1 {
+        flex-direction: column;
+        width: 75%;
+        margin-bottom: 30px;
+    }
+
+    .article {
+        width: 120%;
+    }
+
+    #text {
+        color: #ffffff;
+        font-size: 20px;
+        padding: 10px 0;
+        margin-top: 320px;
+    }
+   
+}
+
+@media all and (max-width: 650px) {
+    .off {
+        display: none;
+    }
+
+    .nav a {
+        font-size: 25px;
+    }
+
+    .panes {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .article {
+        width: 120%;
+    }
+    .btn-menu{ 
+        display: inline-block;
+    }
+    
+    #text {
+        color: hsl(65, 100%, 98%);
+        font-size: 18px;
+        padding: 10px 0;
+        margin-top: -230px;
+    }
+
+    .publicidad {
+        width: 35%;
+    }
+
+}
+
+@media all and (max-width: 412px) {
+    .aside {
+        flex-direction: row;
+    }
+  
+}
+
