@@ -10,13 +10,12 @@
     width: 60%;
     box-sizing: border-box;
 }
+
 #h1 {
     font-size: 30px;
     color: #f1f1f1;
     text-align: center;
 }
-
-
 
 .cursiva {
     font-size: 12px;
@@ -74,3 +73,17 @@ p {
     border-color: #2ecc71;
 }
 
+@media all and (max-width: 1120px) {
+
+    .formulario {
+
+        width: 100%;
+        padding-right: 20%;
+        padding: 5%;
+    }
+
+    .contact {
+        margin: 20% auto;
+        width: 70%;
+    }
+}
