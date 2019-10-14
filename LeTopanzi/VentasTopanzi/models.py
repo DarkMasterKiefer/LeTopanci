@@ -1,3 +1,3 @@
 from django.db import models
-#  Cliente , Panes , Contacto , compra
+#  Cliente , Productos , Contacto , compra
 # Create your models here.
