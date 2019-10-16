@@ -14,10 +14,12 @@ class Cliente(models.Model):
 
 
 class Producto(models.Model):
-    codigoProducto = models.CharField('Código Producto', max_length=30)
+    codigoProducto = models.CharField('Código Producto', max_length=30).primary_key
     nombreProducto = models.CharField('Nombre Producto', max_length=30)
     descripcion = models.TextField('Descripción del producto', max_length=500)
-    stock = models.IntegerField('Stock', max_length=20).primary_key
+    stock = models.IntegerField('Stock', max_length=20)
+    precio = models.IntegerField('Precio', max_length=20)
+    imagen = models.ImageField(upload_to='None')
 
     
 
