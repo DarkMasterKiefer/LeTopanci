@@ -42,3 +42,4 @@ class Contacto(models.Model):
     telefono = models.CharField('Teléfono', max_length=20)
     mensaje = models.TextField('Ingrese el mensaje', max_length=500)
 
+
