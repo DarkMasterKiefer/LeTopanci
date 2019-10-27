@@ -18,8 +18,8 @@ class Producto(models.Model):
     codigoProducto = models.CharField('Código Producto', max_length=30).primary_key
     nombreProducto = models.CharField('Nombre Producto', max_length=30)
     descripcion = models.TextField('Descripción del producto', max_length=500)
-    stock = models.IntegerField('Stock', max_length=20)
-    precio = models.IntegerField('Precio', max_length=20)
+    stock = models.IntegerField('Stock')
+    precio = models.IntegerField('Precio')
     imagen = models.ImageField(upload_to='None')
 
     def boletaProd(self):
@@ -29,7 +29,7 @@ class Producto(models.Model):
 
 class Venta(models.Model):
     codigoVenta = models.CharField('Código Producto', max_length=30).primary_key
-    precioVenta = models.IntegerField('Precio', max_length=20)
+    precioVenta = models.IntegerField('Precio')
     descripcionVenta = models.TextField('Descripción del producto', max_length=500)
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
