@@ -2,7 +2,9 @@
 {% load static %}
     
 {% block content %}
-    
+<head>
+    <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+</head>
 <!-- Swiper -->
     <section class=" section margen-interno">
             <div class="swiper-container">
@@ -29,7 +31,8 @@
             </div>
     </section>
 
-    <!-- Swiper JS -->
+    
+     <!-- Swiper JS -->
     <script src="/static/js/swiper.min.js"></script>
 
     <!-- Initialize Swiper -->
@@ -37,4 +40,4 @@
     
 {% endblock %}
 
-    
+   
