@@ -1,0 +1,26 @@
+{% extends 'VentasTopanzi/base.html' %}
+{% load static %}
+   
+{% block content %}
+   <head>
+       <link rel="stylesheet" href="{% static 'css/Formulario.css' %}">
+   </head>
+    <section class="row main clearfix">
+            <section class="col-xs-12 col-sm-6 ">
+                <h1 id="h1">Le.Topanzi</h1>
+                <br>
+            </section>
+        <section class="col-xs-12 col-sm-6 contact ">
+            <form id="contacto" name="contacto" class="formulario" action="#" method="post">
+                <h3>Deje sus datos de contacto:</h3><br>
+                <input class="input" type="text" id="nombre" name="nombre" minlength="3" maxlength="10" placeholder="Nombre (requerido)" size="40" onblur="validarNombre()"><br><br>
+                <input class="input" type="email" id="mail" name="mail" placeholder="E-mail (requerido)" size="40" onblur="validarCorreo()"><br><br>
+                <label for="telefono">+56 9</label> <input class="input" type="number" id="telefono" name="telefono" placeholder="Teléfono" size="35" step="1"><br><br>
+                <input class="input" id="fecha" name="fecha" type="date" min="2000-01-01"><br><br>
+                <textarea class="textarea" rows="3" cols="38" placeholder="Mensaje"></textarea><br><br>
+                <input class="boton input" type="submit" value="Enviar" onclick="validarFormulario(), enviarMensaje()"><br><br>
+            </form>
+        </section>
+    </section>
+
+{% endblock %}

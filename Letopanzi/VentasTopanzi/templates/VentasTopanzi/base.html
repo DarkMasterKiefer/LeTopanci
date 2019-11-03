@@ -1,0 +1,79 @@
+{% load staticfiles %}
+<html>
+    <head>
+        
+        <title>Le.Topanzi</title>
+        
+        <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+        <link rel="stylesheet" href="{% static 'css/iconos/css/all.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+
+    </head>
+
+    <body>
+        <div class="padre">
+            <header class="header">
+                <div class="menu margen-interno">
+                    <div class="logo">
+                        <li><a href="{% url 'index' %}">Le.Topanzi</a></li>
+                    </div>
+                    <div class="nav">
+                        <a href="{% url 'index' %}"><i class="fas fa-home" aria-hidden="true"></i><span class="off">Inicio</span></a>
+                        <a href="{% url 'Nosotros' %}"><i class="fas fa-users" aria-hidden="true"></i><span class="off">Nosotros</span></a>
+                        <a href="{% url 'Productos' %}"><i class="fas fa-hamburger" aria-hidden="true"></i><span class="off">Productos</span></a>
+                        <a href="{% url 'Contacto' %}"><i class="fas fa-envelope" aria-hidden="true"></i><span class="off">Contacto</span></a>
+                    </div>
+                    <div class="social">
+                        <div>
+                            <a href="https://www.facebook.com/le.topanzi/" target="_blank"><i class="fab fa-facebook"
+                            aria-hidden="true"></i></a>
+                        </div>
+                        <div>
+                            <a href="https://www.instagram.com/le.topanzi/?hl=es-la" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+                
+            {% block content %}
+
+            {% endblock %}
+            
+                <footer class="footer margen-interno">
+                    <nav class="pie">
+                        <a href="#">Desarrollado con cariño para los kbros de Le.Topanzi por: Th3.MiMoX</a>
+                    </nav>
+                </footer>
+
+                <div class="iconosocial">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/le.topanzi/" target="_blank" class="icon-facebook">
+                                <img src="/static/imagenes/facebook-logo.png" width="32" height="32" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/le.topanzi/?hl=es-la" target="_blank" class="icon-instagram">
+                                <img src="/static/imagenes/instagram-logo.png" width="32" height="32" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'Galeria' %}" target="_blank" class="icon-camera">
+                                <img src="/static/imagenes/camara.png" width="32" height="32" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div >
+                    <a class="flecharriba">
+                        <i class="fas fa-arrow-circle-up fa-2x"></i>
+                    </a>
+                </div>
+
+        </div>
+        <script src="/static/js/script.js"></script>
+    </body>
+
+</html>
