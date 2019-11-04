@@ -35,6 +35,8 @@
                         </div>
                     </div>
                 </div>
+                <a href="{% url 'prod_new' %}" class="top-menu"><span class="glyphiconglyphicon-plus"></span></a>
+                <h2><a href="{% url 'prod_detail' pk=prod.pk %}">{{ prod.nombreProducto }}</a></h2>
             </header>
                 
             {% block content %}
