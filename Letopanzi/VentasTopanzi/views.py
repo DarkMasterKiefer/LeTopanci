@@ -1,22 +1,19 @@
 from django.shortcuts import render
-from django.utils import timezone
-# from .models import Post
-from django.shortcuts import render, get_object_or_404 
-# from .forms import PostForm
-from django.shortcuts import redirect
+from .models import Producto
 
 # Create your views here.
 def index (request):
-    return render(request, 'VentasTopanzi/index.html')
+    return render(request, 'VentasTopanzi/index.html', {})
 
 def Nosotros (request):
-    return render(request, 'VentasTopanzi/Nosotros.html')
+    return render(request, 'VentasTopanzi/Nosotros.html', {})
 
 def Productos (request):
-    return render(request, 'VentasTopanzi/Productos.html')
+    prod = Producto.objects.order_by('nombreProducto')
+    return render(request, 'VentasTopanzi/Productos.html', {'prod': prod })
 
 def Contacto (request):
-    return render(request, 'VentasTopanzi/Contacto.html')
+    return render(request, 'VentasTopanzi/Contacto.html', {})
 
 def Galeria (request):
-    return render(request, 'VentasTopanzi/Galeria.html')
+    return render(request, 'VentasTopanzi/Galeria.html', {})

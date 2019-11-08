@@ -1,0 +1,13 @@
+{% extends 'VentasTopanzi/base.html' %}
+
+{% block content %}
+<div class="prod">
+    {% if prod.codigoProducto %}
+<div class="date">
+    {{ post.codigoProducto }}
+</div>
+    {% endif %}
+<h1>{{ prod.nombreProducto }}</h1>
+<p>{{ prod.descripcion|linebreaksbr }}</p>
+</div>
+{% endblock %}

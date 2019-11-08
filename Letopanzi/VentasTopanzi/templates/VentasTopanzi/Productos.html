@@ -3,7 +3,17 @@
 
 {% block content %}
         <!------------------------------Agregar Productos--------------------------------------->
+        {% for pro in prod %}
+<div>
+<p>Código Producto: {{ pro.codigoProducto }}</p>
+<h2><a href="">{{ pro.nombreProducto }}</a></h2>
+<p>{{ pro.descripcion|linebreaksbr }}</p>
+{{pro.image}} 
+</div>
+{% endfor %}
+
     <section class="produc1 flex text-center margen-interno">
+            
         <div class="panes">
             <h2>Letopanzi Pollo</h2>
             <p class="precio">$1.100</p>
