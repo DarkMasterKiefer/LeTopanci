@@ -1,9 +1,0 @@
-{% extends 'VentasTopanzi/base.html' %}
-
-{% block content %}
-<h2>New prod</h2>
-<form method="PRODUCTO" class="prod-form">{% csrf_token %}
-{{ form.as_p }}
-<button type="submit" class="save btnbtn-default">Save</button>
-</form>
-{% endblock %}

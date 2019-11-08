@@ -2,15 +2,6 @@
 {% load static %}
 
 {% block content %}
-    <!------------------------------Listar Posts--------------------------------------->
-    {% for produ in Productos %}
-<div>
-<p>publicado: {{ produ.nombreProducto }}</p>
-<h2><a href="">{{ produ.descripcion }}</a></h2>
-<p>{{ produ.precio|linebreaksbr }}</p>
-</div>
-{% endfor %}
-
         <!------------------------------Agregar Productos--------------------------------------->
     <section class="produc1 flex text-center margen-interno">
         <div class="panes">

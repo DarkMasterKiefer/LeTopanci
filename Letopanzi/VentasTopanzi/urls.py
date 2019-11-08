@@ -8,7 +8,5 @@ urlpatterns = [
     path('VentasTopanzi/Productos', views.Productos, name='Productos'),
     path('VentasTopanzi/Contactos', views.Contacto, name='Contacto'),
     path('VentasTopanzi/Galeria', views.Galeria, name='Galeria'),
-    path('prod/<int:pk>/', views.prod_detail, name='prod_detail'),
-    path('prod/new', views.prod_new, name='prod_new'),
     
 ]
