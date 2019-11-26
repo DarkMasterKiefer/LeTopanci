@@ -4,7 +4,7 @@
 
 <!------------------------------Agregar Productos--------------------------------------->
     <section class="produc1 flex text-center margen-interno">
-            
+        <a href="{% url 'prod_new' %}" class="top-menu"><i class="far fa-plus-square fa-2x"></i></a>    
         {% for pro in prod %}
         <div class="panes">
         <h2><a href="{% url 'prod_detail' pk=pro.pk %}">{{ pro.nombreProducto }}</a></h2>

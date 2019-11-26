@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Producto
 from django.shortcuts import render, get_object_or_404
+from .forms import ProdForm
 
 # Create your views here.
 def index (request):
@@ -22,3 +23,7 @@ def Galeria (request):
 def prod_detail(request, pk):
     prod = get_object_or_404(Producto, pk=pk)
     return render(request, 'VentasTopanzi/prod_detail.html', {'prod': prod})
+
+def prod_new(request):
+	form = ProdForm()
+	return render(request, 'VentasTopanzi/prod_edit.html', {'form': form})
