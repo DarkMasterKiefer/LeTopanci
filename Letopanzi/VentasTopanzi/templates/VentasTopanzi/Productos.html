@@ -2,74 +2,20 @@
 {% load static %}
 
 {% block content %}
-        <!------------------------------Agregar Productos--------------------------------------->
-        {% for pro in prod %}
-<div>
-<p>Código Producto: {{ pro.codigoProducto }}</p>
-<h2><a href="">{{ pro.nombreProducto }}</a></h2>
-<p>{{ pro.descripcion|linebreaksbr }}</p>
-{{pro.image}} 
-</div>
-{% endfor %}
-
+<!------------------------------Agregar Productos--------------------------------------->
     <section class="produc1 flex text-center margen-interno">
             
+        {% for pro in prod %}
         <div class="panes">
-            <h2>Letopanzi Pollo</h2>
-            <p class="precio">$1.100</p>
-            <hr>
-            <p>Pechuga de Pollo,Tomate sin semillas,Lechuga hidroponica, Cebolla Morada y Pepinillo en vinagre</p>
-            <hr>
-            <a href="" onclick="mensajeCompra()" class="btn-precio">Comprar</a>
+        <h2>{{ pro.nombreProducto }}</a></h2>
+        <p class="precio">${{ pro.precio }}</p>
+        <hr>
+        <p>{{ pro.descripcion|linebreaksbr }}</p>
+        <hr>
+        <a href="" onclick="mensajeCompra()" class="btn-precio">Comprar</a>
+        <img src="{{MEDIA_URL}}{{ pro.docfile }}" >
         </div>
-        <div class="panes">
-            <h2>Letopanziladelfia</h2>
-            <p class="precio">$1.100</p>
-            <hr>
-            <p>Queso tipo Filadelfia mesclado con Ciboulette, Tomate sin semillas, Albahaca, Lechuga hidroponica y
-                Cebolla Morada</p>
-            <hr>
-            <a href="" onclick="mensajeCompra()" class="btn-precio">Comprar</a>
-        </div>
-        <div class="panes">
-            <h2>Cheddar</h2>
-            <p class="precio">$1.100</p>
-            <hr>
-            <p>Queso Cheddar, Champiñon laminado y Cebolla Caramelizada</p>
-            <hr>
-            <a href="" onclick="mensajeCompra()" class="btn-precio">Comprar</a>
-        </div>
-        <div class="panes">
-            <h2>Jamon-Queso</h2>
-            <p class="precio">$1.100</p>
-            <hr>
-            <p>Jamon laminado, Queso laminado, Tomate sin semillas, Albahaca</p>
-            <hr>
-            <a href="" onclick="mensajeCompra()" class="btn-precio">Comprar</a>
-        </div>
-        <div class="panes">
-            <h2>Lactonesa de Cilantro</h2>
-            <p class="precio">$1.000</p>
-            <hr>
-            <p>----</p>
-            <hr>
-            <a href="" onclick="mensajeCompra()" class="btn-precio">Comprar</a>
-        </div>
-        <div class="panes">
-            <h2>Lactonesa de Ajo</h2>
-            <p class="precio">$1.000</p>
-            <hr>
-            <p>----</p>
-            <hr>
-            <a href="" onclick="mensajeCompra()" class="btn-precio">Comprar</a>
-        </div>
-        <div class="panes">
-            <h2>Lactonesa de Pimenton</h2>
-            <p class="precio">$1.000</p>
-            <hr>
-            <p>----</p>
-            <hr>
-            <a href="" onclick="mensajeCompra()" class="btn-precio">Comprar</a>
-        </div>
+        {% endfor %}
+        
     </section>
 {% endblock %}
