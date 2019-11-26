@@ -3,6 +3,7 @@ from . import views
 from django.conf.urls import url
 from django.conf import settings
 from django.views.static import serve
+from django.conf.urls.static import static
 
 urlpatterns = [
     
@@ -11,6 +12,5 @@ urlpatterns = [
     path('VentasTopanzi/Productos', views.Productos, name='Productos'),
     path('VentasTopanzi/Contactos', views.Contacto, name='Contacto'),
     path('VentasTopanzi/Galeria', views.Galeria, name='Galeria'),
-    
+    path('prod/<int:pk>/', views.prod_detail, name='prod_detail'),
 ]
-

@@ -1,13 +1,23 @@
 {% extends 'VentasTopanzi/base.html' %}
-
+{% load static %}
 {% block content %}
-<div class="prod">
-    {% if prod.codigoProducto %}
-<div class="date">
-    {{ post.codigoProducto }}
-</div>
-    {% endif %}
-<h1>{{ prod.nombreProducto }}</h1>
-<p>{{ prod.descripcion|linebreaksbr }}</p>
-</div>
+<section class="produc1 flex text-center margen-interno">
+    
+    <div class="panes">
+            <h2>Código producto: {{prod.codigoProducto}} </a></h2>
+            <hr>
+            <h2>Nombre: {{ prod.nombreProducto }}</a></h2>
+            <hr>
+            <h2>Precio: ${{ prod.precio }}</a></h2>
+            <hr>
+            <h2>Stock: {{ prod.stock }}</a></h2>
+            <hr>
+            <p>{{ prod.descripcion|linebreaksbr }}</p>
+            <hr>
+            <img width="200" height="200" src="{{prod.imagen.url}}" alt="">
+            <hr>
+            
+    </div>
+</section>
+
 {% endblock %}

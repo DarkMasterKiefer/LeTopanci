@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 # Clase cliente, Productos, Contacto, Compra
 # Create your models here.
 
@@ -21,7 +22,7 @@ class Producto(models.Model):
     descripcion = models.TextField('Descripción del producto', max_length=500)
     stock = models.IntegerField('Stock')
     precio = models.IntegerField('Precio')
-    imagen = models.ImageField(upload_to='None')
+    imagen =models.ImageField(blank=True)
 
     def boletaProd(self):
         return "Nombre Producto: " +self.nombreProducto + "\n Precio: "+self.precio 
