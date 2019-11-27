@@ -1,9 +1,15 @@
 {% extends 'VentasTopanzi/base.html' %}
-
+{% load static %}
 {% block content %}
-<h2>Editar Producto</h2>
-<form method="PRODUCTO">{% csrf_token %}
-{{ form.as_p }}
-<button type="submit" class="save btnbtn-default">Save</button>
-</form>
+<section class="produc1 flex text-center margen-interno">
+    
+    <div class="panes">
+        <h2>Editar Producto</h2>
+        <form method="PRODUCTO">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btnbtn-default">Save</button>
+        </form>
+            
+    </div>
+</section>
 {% endblock %}

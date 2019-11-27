@@ -14,4 +14,5 @@ urlpatterns = [
     path('VentasTopanzi/Galeria', views.Galeria, name='Galeria'),
     path('prod/<int:pk>/', views.prod_detail, name='prod_detail'),
     path('prod/new', views.prod_new, name='prod_new'),
+    path('prod/<int:pk>/edit/', views.prod_edit, name='prod_edit'),
 ]
