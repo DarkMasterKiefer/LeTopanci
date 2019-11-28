@@ -47,3 +47,14 @@ def prod_edit(request, pk):
     else:
         form = ProdForm(instance=prod)
     return render(request, 'VentasTopanzi/prod_edit.html', {'form': form})
+
+def prod_delete(request, pk):
+    prod = get_object_or_404(Producto, pk=pk)
+    if request.method == "PRODUCTODELETE":
+        form = ProdForm(request.PRODUCTO, instance=prod)
+        if form.is_valid():
+            prod.delete()
+    else:
+        form = ProdForm(instance=prod)
+    return render(request, 'VentasTopanzi/Productos.html', {'prod': prod})
+
