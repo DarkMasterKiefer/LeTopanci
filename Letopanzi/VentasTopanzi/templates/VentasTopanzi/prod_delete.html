@@ -5,7 +5,7 @@
     
     <div class="panes">
         <h2>¿Quiere eliminar este producto?</h2>
-        <form method="PRODUCTODELETE">{% csrf_token %}
+        <form method="POST">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btnbtn-default">Eliminar</button>
         </form>

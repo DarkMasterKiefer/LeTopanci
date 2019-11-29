@@ -27,6 +27,12 @@ class Producto(models.Model):
     def boletaProd(self):
         return "Nombre Producto: " +self.nombreProducto + "\n Precio: "+self.precio 
 
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.nombreProducto
+
     
 
 class Venta(models.Model):
@@ -36,6 +42,12 @@ class Venta(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.codigoVenta
+
 class Contacto(models.Model):
     codigoContacto = models.CharField('Código Contacto', max_length=30)
     nombre = models.CharField('Nombre', max_length=30)
@@ -43,3 +55,9 @@ class Contacto(models.Model):
     correo = models.EmailField('Correo')
     telefono = models.CharField('Teléfono Ej:+56955887741',max_length=20)
     mensaje = models.TextField('Ingrese el mensaje', max_length=500)
+
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.mensaje

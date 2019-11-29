@@ -5,9 +5,9 @@
     
     <div class="panes">
         <h2>Agregar Producto</h2>
-        <form method="PRODUCTO">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
+        <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
         </form>
             
     </div>

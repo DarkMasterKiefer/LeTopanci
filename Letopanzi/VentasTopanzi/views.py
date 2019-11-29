@@ -26,8 +26,8 @@ def prod_detail(request, pk):
     return render(request, 'VentasTopanzi/prod_detail.html', {'prod': prod})
 
 def prod_new(request):
-    if request.method == "PRODUCTO":
-        form = ProdForm(request.PRODUCTO)
+    if request.method == "POST":
+        form = ProdForm(request.POST, request.FILES)
         if form.is_valid():
             prod = form.save(commit=False)
             prod.save()
@@ -36,10 +36,12 @@ def prod_new(request):
         form = ProdForm()
     return render(request, 'VentasTopanzi/prod_new.html', {'form': form})
 
+
+
 def prod_edit(request, pk):
     prod = get_object_or_404(Producto, pk=pk)
-    if request.method == "PRODUCTO":
-        form = ProdForm(request.PRODUCTO, instance=prod)
+    if request.method == "POST":
+        form = ProdForm(request.POST, instance=prod)
         if form.is_valid():
             prod = form.save(commit=False)
             prod.save()
@@ -49,12 +51,7 @@ def prod_edit(request, pk):
     return render(request, 'VentasTopanzi/prod_edit.html', {'form': form})
 
 def prod_delete(request, pk):
-    prod = get_object_or_404(Producto, pk=pk)
-    if request.method == "PRODUCTODELETE":
-        form = ProdForm(request.PRODUCTO, instance=prod)
-        if form.is_valid():
-            prod.delete()
-    else:
-        form = ProdForm(instance=prod)
-    return render(request, 'VentasTopanzi/Productos.html', {'prod': prod})
-
+    pro = get_object_or_404(Producto, pk=pk)
+    pro.delete()
+    prod = Producto.objects.order_by('codigoProducto')
+    return render(request, 'VentasTopanzi/Productos.html', {'prod': prod })
