@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+    <head>
+        <link rel="stylesheet" href="{% static 'css/Formulario.css' %}">
+    </head>
+    <section class="row main clearfix">
+            <section class="col-xs-12 col-sm-6 contact">
+                <h1 id="h1">Le.Topanzi</h1>
+                <br>
+            </section>
+        <section class="col-xs-12 col-sm-6 contact ">
+            <form action="/VentasTopanzi/contacto" id="contacto" class="formulario"  method="post"> 
+                {% csrf_token %} {{ form.as_p }}               
+                <input class="boton input" type="submit" value="Enviar" onclick="validarFormulario(), enviarMensaje()"><br><br>  
+            </form>
+        </section>
+    </section>
+
+{% endblock %}

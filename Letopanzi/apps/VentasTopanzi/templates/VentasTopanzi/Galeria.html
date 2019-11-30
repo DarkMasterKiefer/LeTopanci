@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+{% load static %}
+    
+{% block content %}
+    <head>
+        <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+    </head>
+<!-- Swiper -->
+    <section class=" section margen-interno">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image:url(static/img/img1.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(static/img/img2.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(static/img/img3.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(static/img/img4.jpg)"></div>
+                    <div class="swiper-slide a" style="background-image:url(static/img/img5.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(static/img/img6.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(static/img/img7.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(static/img/img8.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(static/img/img9.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(static/img/img10.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(static/img/img11.jpg)"></div>
+                    <div class="swiper-slide" style="background-image:url(static/img/img12.jpg)"></div>
+                </div>
+                <!-- Add Pagination -->
+
+                <div id="nose" class="swiper-pagination margen-interno flex">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis officiis sequi minima natus, pariatur vitae vero vel non, quisquam       voluptates, quam commodi mollitia rerum harum excepturi sapiente sed ad esse.</p>
+                </div>
+
+            </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="/static/js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script src="/static/js/swiper.js"></script>
+    
+{% endblock %}
+
+    

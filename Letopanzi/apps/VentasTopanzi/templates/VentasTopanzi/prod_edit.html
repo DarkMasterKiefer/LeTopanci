@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<section class="produc1 flex text-center margen-interno">
+    
+    <div class="panes">
+        <h2>Editar Producto</h2>
+        <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Guardar</button>
+        </form>
+            
+    </div>
+</section>
+{% endblock %}

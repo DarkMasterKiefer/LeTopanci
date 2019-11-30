@@ -1,0 +1,67 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/Formulario.css' %}">
+</head>
+
+<section  class="row main clearfix">
+    
+    <section class="col-xs-12 col-sm-6 contact">
+        <center>
+            <form class="Formulario" method="POST">
+                {% csrf_token %}
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <label> Nombre de Usuario</label>
+                        <input type="text" name="username">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <label>Correo</label>
+                        <input type="text" name="email">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <label>Nombre</label>
+                        <input type="text" name="first_name">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class=" col-md-8 col-md-offset-2">
+                        <label>Apellido</label>
+                        <input type="text" name="last_name">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <label>Contraseña</label>
+                        <input type="password" name="password1">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <label>Confirmar contraseña</label>
+                        <input type="password" name="password2">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <button class="btn btn-primary" type="submit">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </center>
+    </section>
+</section>
+{% endblock %}

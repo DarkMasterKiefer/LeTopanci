@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/Formulario.css' %}">
+</head>
+
+
+<section  class="row main clearfix">
+    
+    <section class="col-xs-12 col-sm-6 contact">
+        <center>
+            <form class="Formulario" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div>
+                            <label for="username">Nombre de usuario:</label>
+                            <input type="text" name="username">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div>
+                            <label for="username">Contraseña:</label>
+                            <input type="password" name="password">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div>
+                            <a href="{% url 'password_reset' %}">Olvidé mi Contraseña</a>
+                            <input class="btn" type="submit" value="Ingresar">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </center>
+    </section>
+</section>
+
+{% endblock %}
