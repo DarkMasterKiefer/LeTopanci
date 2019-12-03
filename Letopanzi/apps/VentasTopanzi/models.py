@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.utils.translation import ugettext as _
 # Clase cliente, Productos, Contacto, Compra
 # Create your models here.
 
@@ -32,6 +33,13 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombreProducto
+
+    class Meta:
+        permissions = (
+            ('admin',_('Es administrador')),
+            ('cliente',_('Es cliente')),
+        )
+
     
 
 class Venta(models.Model):

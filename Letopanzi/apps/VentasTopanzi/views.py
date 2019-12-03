@@ -5,8 +5,7 @@ from django.shortcuts import redirect
 from django.contrib.auth.views import LoginView, LogoutView
 from django.http import HttpResponseRedirect 
 from django.urls import reverse_lazy, reverse
-from .forms import FormularioForm
-from .forms import ProdForm
+from .forms import ProdForm, FormularioForm
 from .models import Producto
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
@@ -25,42 +24,47 @@ def Productos (request):
 
 def Contacto (request):
     if request.method == 'POST':
-        form = FormularioForm(request.POST, request.FILES)
+        form = FormularioForm(request.POST)
         if form.is_valid():
-            cont = form.save(commit=False)
-            cont.save()
-            prod = Producto.objects.order_by('codigoProducto')
-            return render(request, 'VentasTopanzi/Productos.html', {'prod': prod })
+            prod = form.save(commit=False)
+            prod.save()
     else:
         form = FormularioForm()
     return render(request, 'VentasTopanzi/Contacto.html', {'form': form})
 
 def prod_new(request):
-    if request.method == "POST":
-        form = ProdForm(request.POST, request.FILES)
-        if form.is_valid():
-            prod = form.save(commit=False)
-            prod.save()
-            return redirect('prod_detail', pk=prod.pk)
+    user=request.user
+    if user.has_perm('VentasTopanzi.admin'):
+
+        if request.method == "POST":
+            form = ProdForm(request.POST, request.FILES)
+            if form.is_valid():
+                prod = form.save(commit=False)
+                prod.save()
+                return redirect('prod_detail', pk=prod.pk)
+        else:
+            form = ProdForm()
+        return render(request, 'VentasTopanzi/prod_new.html', {'form': form})
     else:
-        form = ProdForm()
-    return render(request, 'VentasTopanzi/prod_new.html', {'form': form})
+        prod = Producto.objects.order_by('codigoProducto')
+        return render(request, 'VentasTopanzi/Productos.html', {'prod': prod })
 
 def Galeria (request):
     return render(request, 'VentasTopanzi/Galeria.html')
 
 def prod_detail(request, pk):
-    prod = get_object_or_404(Producto, pk=pk)
-    return render(request, 'VentasTopanzi/prod_detail.html', {'prod': prod})
-
-
-
-
+    user=request.user
+    if user.has_perm('VentasTopanzi.admin'):
+        prod = get_object_or_404(Producto, pk=pk)
+        return render(request, 'VentasTopanzi/prod_detail.html', {'prod': prod})
+    else:
+        prod = Producto.objects.order_by('codigoProducto')
+        return render(request, 'VentasTopanzi/Productos.html', {'prod': prod })
 
 def prod_edit(request, pk):
     prod = get_object_or_404(Producto, pk=pk)
     if request.method == "POST":
-        form = ProdForm(request.POST, instance=prod)
+        form = ProdForm(request.POST, request.FILES, instance=prod)
         if form.is_valid():
             prod = form.save(commit=False)
             prod.save()

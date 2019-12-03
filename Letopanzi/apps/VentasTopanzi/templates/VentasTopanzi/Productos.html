@@ -4,7 +4,7 @@
 
 <!------------------------------Agregar Productos--------------------------------------->
     <section class="produc1 flex text-center margen-interno">
-            {% if user.is_authenticated %}
+           {% if user.is_authenticated %}
                 <a href="{% url 'prod_new' %}" class="top-menu"><i class="far fa-plus-square fa-2x"></i></a>  
             {% endif %}  
         {% for pro in prod %}

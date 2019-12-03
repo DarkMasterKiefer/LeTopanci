@@ -2,7 +2,7 @@ function enviarMensaje(){
     alert("Mensaje Enviado");
 }
 function mensajeCompra(){
-    alert("Su producto ha sido agregado al carrito");
+    alert("Aun no hemos agregado redcompra, esta es una version de prueba");
 }
 $(document).ready(function(){
     $('.flecharriba').click(function(){
