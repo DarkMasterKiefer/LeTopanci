@@ -1,10 +1,12 @@
 from django import forms
-from .models import Producto
+from .models import Producto, Contacto
 
-class Formulario(forms.Form):
-    nombre = forms.CharField(max_length=100)
-    mensaje = forms.CharField()
-    mail = forms.EmailField()
+class FormularioForm(forms.ModelForm):
+    class Meta:
+        model = Contacto
+        fields = ('nombre', 'apellido','correo','telefono','mensaje')
+        
+
 
 
 class ProdForm(forms.ModelForm):

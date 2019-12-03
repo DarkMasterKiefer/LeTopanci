@@ -5,10 +5,12 @@ from django.shortcuts import redirect
 from django.contrib.auth.views import LoginView, LogoutView
 from django.http import HttpResponseRedirect 
 from django.urls import reverse_lazy, reverse
-from .forms import Formulario
+from .forms import FormularioForm
 from .forms import ProdForm
 from .models import Producto
-
+from django.contrib.auth.models import User, Group
+from rest_framework import viewsets
+from apps.VentasTopanzi.quickstart.serializers import UserSerializer, GroupSerializer
 # Create your views here.
 
 def index (request):
@@ -23,21 +25,15 @@ def Productos (request):
 
 def Contacto (request):
     if request.method == 'POST':
-        form = Formulario(request.POST)
+        form = FormularioForm(request.POST, request.FILES)
         if form.is_valid():
-            return HttpResponseRedirect('/VentasTopanzi/index.html')
+            cont = form.save(commit=False)
+            cont.save()
+            prod = Producto.objects.order_by('codigoProducto')
+            return render(request, 'VentasTopanzi/Productos.html', {'prod': prod })
     else:
-        form = Formulario()
-    return render(request, 'Contacto.html', {
-        'form': form,
-    })
-
-def Galeria (request):
-    return render(request, 'VentasTopanzi/Galeria.html')
-
-def prod_detail(request, pk):
-    prod = get_object_or_404(Producto, pk=pk)
-    return render(request, 'VentasTopanzi/prod_detail.html', {'prod': prod})
+        form = FormularioForm()
+    return render(request, 'VentasTopanzi/Contacto.html', {'form': form})
 
 def prod_new(request):
     if request.method == "POST":
@@ -49,6 +45,15 @@ def prod_new(request):
     else:
         form = ProdForm()
     return render(request, 'VentasTopanzi/prod_new.html', {'form': form})
+
+def Galeria (request):
+    return render(request, 'VentasTopanzi/Galeria.html')
+
+def prod_detail(request, pk):
+    prod = get_object_or_404(Producto, pk=pk)
+    return render(request, 'VentasTopanzi/prod_detail.html', {'prod': prod})
+
+
 
 
 
@@ -69,3 +74,11 @@ def prod_delete(request, pk):
     pro.delete()
     prod = Producto.objects.order_by('codigoProducto')
     return render(request, 'VentasTopanzi/Productos.html', {'prod': prod })
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all().order_by('-date_joined')
+    serializer_class = UserSerializer
+
+class GroupViewSet(viewsets.ModelViewSet):
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer

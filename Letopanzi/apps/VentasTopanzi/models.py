@@ -42,9 +42,14 @@ class Venta(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 
 class Contacto(models.Model):
-    codigoContacto = models.CharField('Código Contacto', max_length=30)
     nombre = models.CharField('Nombre', max_length=30)
     apellido = models.CharField('Apellido', max_length=30)
     correo = models.EmailField('Correo')
     telefono = models.CharField('Teléfono', max_length=20)
     mensaje = models.TextField('Ingrese el mensaje', max_length=500)
+
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.mensaje

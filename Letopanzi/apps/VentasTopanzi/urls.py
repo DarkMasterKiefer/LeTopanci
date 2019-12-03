@@ -1,6 +1,13 @@
 from django.urls import include, path
 from django.conf.urls import url, include
+from apps.VentasTopanzi.quickstart import views
 from . import views
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+
 
 urlpatterns = [
     
@@ -14,4 +21,7 @@ urlpatterns = [
     path('prod/new', views.prod_new, name='prod_new'),
     path('prod/<int:pk>/edit/', views.prod_edit, name='prod_edit'),
     path('prod/<int:pk>/delete/', views.prod_delete, name='prod_delete'),
+    url(r'^', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
 ]
