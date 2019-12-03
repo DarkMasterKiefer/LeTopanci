@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<section class="produc1 flex text-center margen-interno">
+        {% if user.is_authenticated %}
+            <a href="{% url 'prod_edit' pk=prod.pk %}"><i class="far fa-edit fa-2x"></i></a>
+            <a href="{% url 'prod_delete' pk=prod.pk %}"><i class="far fa-trash-alt fa-2x"></i></a>
+            
+        {% endif %}
+    <div class="panes">
+            <h2>Código producto: {{prod.codigoProducto}} </a></h2>
+            <hr>
+            <h2>Nombre: {{ prod.nombreProducto }}</a></h2>
+            <hr>
+            <h2>Precio: ${{ prod.precio }}</a></h2>
+            <hr>
+            <h2>Stock: {{ prod.stock }}</a></h2>
+            <hr>
+            <p>{{ prod.descripcion|linebreaksbr }}</p>
+            <hr>
+            <img width="200" height="200" src="{{prod.imagen.url}}" alt="">
+            <hr>
+            
+    </div>
+</section>
+
+{% endblock %}

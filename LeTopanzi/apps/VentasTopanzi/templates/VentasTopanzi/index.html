@@ -1,0 +1,66 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    <header class="header">
+        <div class="texto-principal margen-interno">
+            <h1 id="text"> ------------Cuenta la leyenda que el primer le topanzi fue ideado por los
+                dioses Pachamamicos y fue ensamblado con los mejores ingredientes y los mas saludables--------
+            </h1>   
+        </div> 
+    </header>
+{% else %} 
+    <header class="header">
+            <div class="texto-principal margen-interno">
+                <h1 id="text"> ------------Cuenta la leyenda que el primer le topanzi fue ideado por los
+                    dioses Pachamamicos y fue ensamblado con los mejores ingredientes y los mas saludables--------
+                </h1>
+                <div>
+                    <a href="usuario/registrar">
+                    <input class="btn" type="submit" value="Registrarse"></a>    
+                </div>    
+            </div> 
+    </header>
+{% endif %}
+
+    <section class="section margen-interno">
+        <div class="panes1">
+            <article class="article"><img src="/static/imagenes/pansitos.jpg" alt="">
+                <h2>- Letopanzi</h2>
+                <p>Deliciosos pansitos preparados con amors</p>
+            </article>
+            <article class="article"><img src="/static/imagenes/LactonesaAjo.jpg" alt="">
+                <h2>- Lactonesa de Ajo</h2>
+                <p>Sabrosa Lactonesa de Ajo</p>
+            </article>
+            <article class="article"><img src="/static/imagenes/LactonesaPimenton.jpg" alt="">
+                <h2>- Lactonesa de Pimenton</h2>
+                <p>Sabrosa Lactonesa de Pimenton</p>
+            </article>
+            <article class="article"><img src="/static/imagenes/LactonesaCilantro.jpg" alt="">
+                <h2>- Lactones de Cilantro</h2>
+                <p>Sabrosa lactones de Cilantro</p>
+            </article>
+            <nav class="navegacion">
+                <a href="{% url 'index' %}">Inicio</a>
+                <a href="{% url 'Nosotros' %}">Nosotros</a>
+                <a href="{% url 'Productos' %}">Productos</a>
+                <a href="{% url 'Contacto' %}">Contacto</a>
+            </nav>
+        </div>
+
+        <aside class="aside">
+            <div class="publicidad">
+                <h4>publicidad</h4>
+                <img src="/static/imagenes/LogoCorp.jpg" alt="">
+            </div>
+            <br>
+            <div class="publicidad">
+                <h4>publicidad</h4>
+                <img src="/static/imagenes/Logo.jpg" alt="">
+            </div>
+        </aside>
+    </section>
+{% endblock %}

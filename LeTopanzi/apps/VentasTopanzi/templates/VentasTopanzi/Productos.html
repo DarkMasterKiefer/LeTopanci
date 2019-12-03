@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+<!------------------------------Agregar Productos--------------------------------------->
+    <section class="produc1 flex text-center margen-interno">
+           {% if user.is_authenticated %}
+                <a href="{% url 'prod_new' %}" class="top-menu"><i class="far fa-plus-square fa-2x"></i></a>  
+            {% endif %}  
+        {% for pro in prod %}
+        <div class="panes">
+        <h2><a href="{% url 'prod_detail' pk=pro.pk %}">{{ pro.nombreProducto }}</a></h2>
+        <p class="precio">${{ pro.precio }}</p>
+        <hr>
+        <p>{{ pro.descripcion|linebreaksbr }}</p>
+        <img width="200" height="200" src="{{pro.imagen.url}}" alt="">
+        <hr>
+        <a href="" onclick="mensajeCompra()" class="btn-precio">Comprar</a>
+        
+        </div>
+        {% endfor %}
+        
+    </section>
+{% endblock %}

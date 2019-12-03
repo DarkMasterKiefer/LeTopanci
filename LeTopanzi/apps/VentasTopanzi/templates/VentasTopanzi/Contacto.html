@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+    <section class="produc1 flex text-center margen-interno">
+    
+        <div class="panes">
+            <h2>Enviar Mensaje</h2>
+            <form method="POST" ></form>{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" onclick="enviarMensaje()" class="save btn btn-default">Save</button>
+            </form>
+                
+        </div>
+    </section>
+
+{% endblock %}
