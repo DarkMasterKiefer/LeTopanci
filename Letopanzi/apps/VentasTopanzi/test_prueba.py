@@ -7,7 +7,7 @@ class testProbar(unittest.TestCase):
         self.assertAlmostEqual(validarUsuario('admin','asdasd'),True)
         self.assertAlmostEqual(validarUsuario('asdasd','adasdasmin'),True)
 
-class testProbar(unittest.TestCase):
+class testProbar2(unittest.TestCase):
     def test_grupo(self):
         self.assertAlmostEqual(validarGrupo('clientes'),True)
         self.assertAlmostEqual(validarGrupo('asdasd'),True)
